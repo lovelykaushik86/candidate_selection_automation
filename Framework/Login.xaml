@@ -1,0 +1,203 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Login" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="759,876" sap2010:WorkflowViewState.IdRef="Login_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ufa="clr-namespace:UiPath.Form.Activities;assembly=UiPath.Form.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="23">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="17">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="739,816" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="isFormClosed" />
+      <Variable x:TypeArguments="x:String" Name="FormValues" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Open Login Page" sap:VirtualizedContainerService.HintSize="697,724" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Url="https://www.naukri.com/recruit/login">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="663,625" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="formValues" />
+              <Variable x:TypeArguments="njl:JObject" Name="formJobject" />
+              <Variable x:TypeArguments="x:Boolean" Name="isFormClosed" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click to see Login Form" sap:VirtualizedContainerService.HintSize="621,51" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="fe8d7965cbc7f3441f1c56c292e2f6e4" Selector="&lt;html title='Employer&amp;apos;s Login: Recruitment Solutions from Naukri.com' /&gt;&lt;webctrl idx='2' parentid='toggleForm' tag='LI' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:Click>
+            <ufa:FormActivity FormFieldsInputData="{x:Null}" FormTitle="{x:Null}" SelectedButton="{x:Null}" Dismissed="[isFormClosed]" DisplayName="Form to Take User Input" FormFieldsOutputData="[FormValues]" FormHeight="330" FormSchema="%[{&quot;label&quot;:&quot;Registered Email ID&quot;,&quot;labelPosition&quot;:&quot;top&quot;,&quot;placeholder&quot;:&quot;Type Registered Email ID&quot;,&quot;description&quot;:&quot;&quot;,&quot;prefix&quot;:&quot;&quot;,&quot;suffix&quot;:&quot;&quot;,&quot;widget&quot;:{&quot;type&quot;:&quot;input&quot;},&quot;hidden&quot;:false,&quot;hideLabel&quot;:false,&quot;disabled&quot;:false,&quot;alwaysEnabled&quot;:false,&quot;tableView&quot;:true,&quot;defaultValue&quot;:null,&quot;validateOn&quot;:&quot;change&quot;,&quot;validate&quot;:{&quot;required&quot;:true,&quot;pattern&quot;:&quot;&quot;,&quot;customMessage&quot;:&quot;Please enter a valid Email ID&quot;,&quot;minLength&quot;:&quot;&quot;,&quot;maxLength&quot;:&quot;&quot;,&quot;custom&quot;:&quot;&quot;,&quot;customPrivate&quot;:false,&quot;strictDateValidation&quot;:false},&quot;errorLabel&quot;:&quot;&quot;,&quot;key&quot;:&quot;emailId&quot;,&quot;conditional&quot;:{&quot;show&quot;:null,&quot;when&quot;:null,&quot;eq&quot;:&quot;&quot;},&quot;type&quot;:&quot;email&quot;,&quot;input&quot;:true,&quot;customClass&quot;:&quot;&quot;,&quot;multiple&quot;:false,&quot;protected&quot;:false,&quot;unique&quot;:false,&quot;persistent&quot;:true,&quot;clearOnHide&quot;:true,&quot;refreshOn&quot;:&quot;&quot;,&quot;redrawOn&quot;:&quot;&quot;,&quot;tooltip&quot;:&quot;&quot;,&quot;tabindex&quot;:&quot;&quot;,&quot;autofocus&quot;:false,&quot;dbIndex&quot;:false,&quot;customDefaultValue&quot;:&quot;&quot;,&quot;calculateValue&quot;:&quot;&quot;,&quot;attributes&quot;:{},&quot;overlay&quot;:{&quot;style&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;top&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;allowCalculateOverride&quot;:false,&quot;encrypted&quot;:false,&quot;showCharCount&quot;:false,&quot;showWordCount&quot;:false,&quot;properties&quot;:{},&quot;allowMultipleMasks&quot;:false,&quot;mask&quot;:false,&quot;inputType&quot;:&quot;email&quot;,&quot;inputFormat&quot;:&quot;plain&quot;,&quot;inputMask&quot;:&quot;&quot;,&quot;kickbox&quot;:{&quot;enabled&quot;:false},&quot;id&quot;:&quot;e4fzfvs&quot;},{&quot;label&quot;:&quot;Password&quot;,&quot;labelPosition&quot;:&quot;top&quot;,&quot;placeholder&quot;:&quot;Type Password&quot;,&quot;description&quot;:&quot;&quot;,&quot;prefix&quot;:&quot;&quot;,&quot;suffix&quot;:&quot;&quot;,&quot;widget&quot;:{&quot;type&quot;:&quot;input&quot;},&quot;hidden&quot;:false,&quot;hideLabel&quot;:false,&quot;showWordCount&quot;:false,&quot;showCharCount&quot;:false,&quot;disabled&quot;:false,&quot;alwaysEnabled&quot;:false,&quot;tableView&quot;:false,&quot;validateOn&quot;:&quot;change&quot;,&quot;validate&quot;:{&quot;required&quot;:true,&quot;pattern&quot;:&quot;&quot;,&quot;customMessage&quot;:&quot;Password can not be blank&quot;,&quot;minLength&quot;:&quot;&quot;,&quot;maxLength&quot;:&quot;&quot;,&quot;custom&quot;:&quot;&quot;,&quot;customPrivate&quot;:false,&quot;strictDateValidation&quot;:false},&quot;errorLabel&quot;:&quot;&quot;,&quot;key&quot;:&quot;password&quot;,&quot;conditional&quot;:{&quot;show&quot;:null,&quot;when&quot;:null,&quot;eq&quot;:&quot;&quot;},&quot;type&quot;:&quot;password&quot;,&quot;input&quot;:true,&quot;customClass&quot;:&quot;&quot;,&quot;multiple&quot;:false,&quot;defaultValue&quot;:null,&quot;protected&quot;:true,&quot;unique&quot;:false,&quot;persistent&quot;:true,&quot;clearOnHide&quot;:true,&quot;refreshOn&quot;:&quot;&quot;,&quot;redrawOn&quot;:&quot;&quot;,&quot;tooltip&quot;:&quot;&quot;,&quot;tabindex&quot;:&quot;&quot;,&quot;autofocus&quot;:false,&quot;dbIndex&quot;:false,&quot;customDefaultValue&quot;:&quot;&quot;,&quot;calculateValue&quot;:&quot;&quot;,&quot;attributes&quot;:{},&quot;overlay&quot;:{&quot;style&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;top&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;allowCalculateOverride&quot;:false,&quot;encrypted&quot;:false,&quot;properties&quot;:{},&quot;allowMultipleMasks&quot;:false,&quot;mask&quot;:false,&quot;inputType&quot;:&quot;text&quot;,&quot;inputFormat&quot;:&quot;plain&quot;,&quot;inputMask&quot;:&quot;&quot;,&quot;id&quot;:&quot;emggd1r&quot;},{&quot;label&quot;:&quot;Submit&quot;,&quot;showValidations&quot;:false,&quot;theme&quot;:&quot;primary&quot;,&quot;size&quot;:&quot;md&quot;,&quot;block&quot;:true,&quot;leftIcon&quot;:&quot;&quot;,&quot;rightIcon&quot;:&quot;&quot;,&quot;disableOnInvalid&quot;:true,&quot;hidden&quot;:false,&quot;disabled&quot;:false,&quot;alwaysEnabled&quot;:false,&quot;tableView&quot;:false,&quot;key&quot;:&quot;submit&quot;,&quot;conditional&quot;:{&quot;show&quot;:null,&quot;when&quot;:null,&quot;eq&quot;:&quot;&quot;},&quot;type&quot;:&quot;button&quot;,&quot;action&quot;:&quot;submit&quot;,&quot;input&quot;:true,&quot;placeholder&quot;:&quot;&quot;,&quot;prefix&quot;:&quot;&quot;,&quot;customClass&quot;:&quot;&quot;,&quot;suffix&quot;:&quot;&quot;,&quot;multiple&quot;:false,&quot;defaultValue&quot;:null,&quot;protected&quot;:false,&quot;unique&quot;:false,&quot;persistent&quot;:false,&quot;clearOnHide&quot;:true,&quot;refreshOn&quot;:&quot;&quot;,&quot;redrawOn&quot;:&quot;&quot;,&quot;labelPosition&quot;:&quot;top&quot;,&quot;description&quot;:&quot;&quot;,&quot;errorLabel&quot;:&quot;&quot;,&quot;tooltip&quot;:&quot;&quot;,&quot;hideLabel&quot;:false,&quot;tabindex&quot;:&quot;&quot;,&quot;autofocus&quot;:false,&quot;dbIndex&quot;:false,&quot;customDefaultValue&quot;:&quot;&quot;,&quot;calculateValue&quot;:&quot;&quot;,&quot;widget&quot;:{&quot;type&quot;:&quot;input&quot;},&quot;attributes&quot;:{},&quot;validateOn&quot;:&quot;change&quot;,&quot;validate&quot;:{&quot;required&quot;:false,&quot;custom&quot;:&quot;&quot;,&quot;customPrivate&quot;:false,&quot;strictDateValidation&quot;:false},&quot;overlay&quot;:{&quot;style&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;top&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;allowCalculateOverride&quot;:false,&quot;encrypted&quot;:false,&quot;showCharCount&quot;:false,&quot;showWordCount&quot;:false,&quot;properties&quot;:{},&quot;allowMultipleMasks&quot;:false,&quot;dataGridLabel&quot;:true,&quot;id&quot;:&quot;e4nrfsj&quot;}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;1579585790082&quot;,&quot;Name&quot;:&quot;login&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/cosmo.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/cosmo.png&quot;,&quot;OverrideCssUrl&quot;:&quot;&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:true,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormWidth="800" GenerateInputFields="True" sap:VirtualizedContainerService.HintSize="621,76" sap2010:WorkflowViewState.IdRef="FormActivity_3" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunInIsolatedMode="False">
+              <ufa:FormActivity.FormFieldsCollection>
+                <scg:Dictionary x:TypeArguments="x:String, Argument" />
+              </ufa:FormActivity.FormFieldsCollection>
+            </ufa:FormActivity>
+            <If Condition="[isFormClosed]" sap:VirtualizedContainerService.HintSize="621,326" sap2010:WorkflowViewState.IdRef="If_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="End of process activities" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CloseAllApplications workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Framework\CloseAllApplications.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Login Form Filling" sap:VirtualizedContainerService.HintSize="376,646" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="njl:JObject" Name="formObject" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize User Input JSON" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_7" JsonObject="[formObject]" JsonString="[formValues]" />
+                  <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Email Field" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_10" Text="[formObject(&quot;emailId&quot;).ToString]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="eed24806b7ab12d3f2fcf5471521e8b0" Selector="&lt;webctrl id='loginEmail' tag='INPUT' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:TypeInto.Target>
+                  </ui:TypeInto>
+                  <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Password Field" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_11" Text="[formObject(&quot;password&quot;).ToString]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="dc7e43ae4599f4e1be71b2ebc67a574a" Selector="&lt;webctrl id='password' tag='INPUT' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:TypeInto.Target>
+                  </ui:TypeInto>
+                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Login Button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="21ce6ca7aad43777bab4f22ddbdb69fa" Selector="&lt;webctrl id='loginBtn' tag='BUTTON' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:OpenBrowser>
+  </Sequence>
+</Activity>
