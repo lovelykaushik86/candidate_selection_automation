@@ -1,14 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="JDFillingDupSequence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:be="clr-namespace:BalaReva.Externals;assembly=BalaReva.Externals" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="JDFillingDupSequence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="browserUrl" Type="InOutArgument(ui:Browser)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,946</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>564,1073</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>JDFillingDupSequence_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="25">
+    <scg:List x:TypeArguments="x:String" Capacity="26">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -34,10 +34,11 @@
       <x:String>UiPath.Excel</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="22">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -60,39 +61,41 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="JDFillingDupSequence" sap:VirtualizedContainerService.HintSize="574,881" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="JDFillingDupSequence" sap:VirtualizedContainerService.HintSize="574,1008" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="CandidatePositionName" />
+      <Variable x:TypeArguments="njl:JObject" Name="mailCredentials" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="532,789" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="532,916" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Form Filling" sap:VirtualizedContainerService.HintSize="494,562" sap2010:WorkflowViewState.IdRef="Sequence_22">
+        <Sequence DisplayName="Form Filling" sap:VirtualizedContainerService.HintSize="494,689" sap2010:WorkflowViewState.IdRef="Sequence_22">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[browserUrl]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="452,470" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+          <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[browserUrl]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="452,597" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,362" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,489" sap2010:WorkflowViewState.IdRef="Sequence_21">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="376,270" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="376,397" sap2010:WorkflowViewState.IdRef="Sequence_20">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="sd:DataTable" Name="candidates" />
                     </Sequence.Variables>
@@ -101,6 +104,16 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="GetMailCredentials.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InOutArgument x:TypeArguments="ui:Browser" x:Key="browser">
+                          <mva:VisualBasicReference x:TypeArguments="ui:Browser" ExpressionText="browserUrl" />
+                        </InOutArgument>
+                        <InOutArgument x:TypeArguments="njl:JObject" x:Key="formObject">
+                          <mva:VisualBasicReference x:TypeArguments="njl:JObject" ExpressionText="mailCredentials" />
+                        </InOutArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
                     <ui:ReadRange AddHeaders="True" DataTable="[candidates]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Candidate's JD" WorkbookPath="Data\JDSheet.xlsm">
                       <ui:ReadRange.Range>
                         <InArgument x:TypeArguments="x:String">
@@ -108,13 +121,13 @@
                         </InArgument>
                       </ui:ReadRange.Range>
                     </ui:ReadRange>
-                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[candidates]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="763,1572" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[candidates]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="763,1637" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="713,1424" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="713,1489" sap2010:WorkflowViewState.IdRef="Sequence_19">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="ui:UiElement" Name="jobType" />
                               <Variable x:TypeArguments="sd:DataTable" Name="CandidateDataTable" />
@@ -1325,12 +1338,8 @@
                                                 </ui:Click>
                                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="testFormSeq.xaml">
                                                   <ui:InvokeWorkflowFile.Arguments>
-                                                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="CandidateDataTable">
-                                                      <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="CandidateDataTable" />
-                                                    </InOutArgument>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="CandidatePositionName">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CandidatePositionName" />
-                                                    </InArgument>
+                                                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="CandidateDataTable">[CandidateDataTable]</InOutArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="CandidatePositionName">[CandidatePositionName]</InArgument>
                                                   </ui:InvokeWorkflowFile.Arguments>
                                                 </ui:InvokeWorkflowFile>
                                               </Sequence>
@@ -1344,7 +1353,19 @@
                               </Sequence>
                             </Sequence>
                             <ui:WriteRange AddHeaders="True" DataTable="[CandidateDataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="671,115" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[&quot;Data\Candidate\&quot; + CandidatePositionName.ToString + &quot;\CandidateLists.xlsx&quot;]" />
-                            <be:ZipFiles MultipleFolders="{x:Null}" Password="{x:Null}" DisplayName="Zip" sap:VirtualizedContainerService.HintSize="671,22" sap2010:WorkflowViewState.IdRef="ZipFiles_1" SourceFolder="[&quot;Data\Candidate\&quot; + CandidatePositionName.ToString]" ZipFile="[&quot;Data\Candidate\&quot; + CandidatePositionName.ToString+ &quot;.zip&quot;]" />
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="671,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ZipMailFiles.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="x:String" x:Key="CandidatePositionName">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CandidatePositionName" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="njl:JObject" x:Key="mailCredentials">
+                                  <mva:VisualBasicValue x:TypeArguments="njl:JObject" ExpressionText="mailCredentials" />
+                                </InArgument>
+                                <InOutArgument x:TypeArguments="ui:Browser" x:Key="browser">
+                                  <mva:VisualBasicReference x:TypeArguments="ui:Browser" ExpressionText="browserUrl" />
+                                </InOutArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
                             <ui:Break sap:VirtualizedContainerService.HintSize="671,22" sap2010:WorkflowViewState.IdRef="Break_5" />
                           </Sequence>
                         </ActivityAction>
