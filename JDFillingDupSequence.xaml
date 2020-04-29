@@ -106,12 +106,8 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="GetMailCredentials.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InOutArgument x:TypeArguments="ui:Browser" x:Key="browser">
-                          <mva:VisualBasicReference x:TypeArguments="ui:Browser" ExpressionText="browserUrl" />
-                        </InOutArgument>
-                        <InOutArgument x:TypeArguments="njl:JObject" x:Key="formObject">
-                          <mva:VisualBasicReference x:TypeArguments="njl:JObject" ExpressionText="mailCredentials" />
-                        </InOutArgument>
+                        <InOutArgument x:TypeArguments="ui:Browser" x:Key="browser">[browserUrl]</InOutArgument>
+                        <InOutArgument x:TypeArguments="njl:JObject" x:Key="formObject">[mailCredentials]</InOutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                     <ui:ReadRange AddHeaders="True" DataTable="[candidates]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Candidate's JD" WorkbookPath="Data\JDSheet.xlsm">
@@ -179,7 +175,7 @@
                                 </Sequence>
                               </If.Else>
                             </If>
-                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="828,11943" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="828,12005" sap2010:WorkflowViewState.IdRef="Sequence_18">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
                                 <Variable x:TypeArguments="x:Int32" Default="100" Name="DelayTime" />
@@ -1245,7 +1241,7 @@
                                 </ui:Click.Target>
                               </ui:Click>
                               <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="786,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
-                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="786,1186" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="786,1248" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="ui:GenericValue" Name="candidate" />
                                   <Variable x:TypeArguments="ui:GenericValue" Name="CvUrl" />
@@ -1279,13 +1275,13 @@
                                     </ui:Target>
                                   </ui:FindChildren.Target>
                                 </ui:FindChildren>
-                                <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="490,948" sap2010:WorkflowViewState.IdRef="ForEach`1_11" Values="[candidateParentDiv]">
+                                <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="490,1010" sap2010:WorkflowViewState.IdRef="ForEach`1_11" Values="[candidateParentDiv]">
                                   <ui:ForEach.Body>
                                     <ActivityAction x:TypeArguments="ui:UiElement">
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="ui:UiElement" Name="item" />
                                       </ActivityAction.Argument>
-                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="454,814" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="454,876" sap2010:WorkflowViewState.IdRef="Sequence_29">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1304,13 +1300,13 @@
                                           </ui:FindChildren.Target>
                                         </ui:FindChildren>
                                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="412,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;candidateCards:&quot; + candidateCards.Count.ToString]" />
-                                        <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="412,483" sap2010:WorkflowViewState.IdRef="ForEach`1_13" Values="[candidateCards]">
+                                        <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="412,545" sap2010:WorkflowViewState.IdRef="ForEach`1_13" Values="[candidateCards]">
                                           <ui:ForEach.Body>
                                             <ActivityAction x:TypeArguments="ui:UiElement">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="ui:UiElement" Name="childItem" />
                                               </ActivityAction.Argument>
-                                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,349" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,411" sap2010:WorkflowViewState.IdRef="Sequence_30">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1342,6 +1338,7 @@
                                                     <InArgument x:TypeArguments="x:String" x:Key="CandidatePositionName">[CandidatePositionName]</InArgument>
                                                   </ui:InvokeWorkflowFile.Arguments>
                                                 </ui:InvokeWorkflowFile>
+                                                <ui:Break sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Break_6" />
                                               </Sequence>
                                             </ActivityAction>
                                           </ui:ForEach.Body>
@@ -1355,15 +1352,9 @@
                             <ui:WriteRange AddHeaders="True" DataTable="[CandidateDataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="671,115" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[&quot;Data\Candidate\&quot; + CandidatePositionName.ToString + &quot;\CandidateLists.xlsx&quot;]" />
                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="671,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ZipMailFiles.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="CandidatePositionName">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CandidatePositionName" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="njl:JObject" x:Key="mailCredentials">
-                                  <mva:VisualBasicValue x:TypeArguments="njl:JObject" ExpressionText="mailCredentials" />
-                                </InArgument>
-                                <InOutArgument x:TypeArguments="ui:Browser" x:Key="browser">
-                                  <mva:VisualBasicReference x:TypeArguments="ui:Browser" ExpressionText="browserUrl" />
-                                </InOutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="CandidatePositionName">[CandidatePositionName]</InArgument>
+                                <InArgument x:TypeArguments="njl:JObject" x:Key="mailCredentials">[mailCredentials]</InArgument>
+                                <InOutArgument x:TypeArguments="ui:Browser" x:Key="browser">[browserUrl]</InOutArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
                             <ui:Break sap:VirtualizedContainerService.HintSize="671,22" sap2010:WorkflowViewState.IdRef="Break_5" />
